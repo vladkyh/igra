@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/igra/static/css/main.5ddbee06.css",
+    "main.js": "/igra/static/js/main.c56c5f03.js",
+    "index.html": "/igra/index.html",
+    "main.5ddbee06.css.map": "/igra/static/css/main.5ddbee06.css.map",
+    "main.c56c5f03.js.map": "/igra/static/js/main.c56c5f03.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ddbee06.css",
+    "static/js/main.c56c5f03.js"
+  ]
+}
