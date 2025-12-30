@@ -1,0 +1,212 @@
+.gameBoard {
+    background: linear-gradient(135deg, #0a1a2a 0%, #1a3a5a 100%);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid #2a5a7a;
+    position: relative;
+    overflow: hidden;
+}
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.stageTitle {
+    text-align: center;
+    color: #FFD700;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 2px;
+}
+
+.christmasBall {
+    margin: 0 20px;
+    animation: swing 3s ease-in-out infinite;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.gameTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    background: rgba(10, 30, 50, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.categoryHeader {
+    background: linear-gradient(45deg, #8B0000, #B22222);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid #FFD700;
+    min-width: 250px;
+}
+
+.scoreHeader {
+    padding: 10px;
+    text-align: center;
+}
+
+.scoreBubble {
+    background: linear-gradient(45deg, #006400, #228B22);
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 3px solid #FFD700;
+    box-shadow: 0 0 15px rgba(0, 100, 0, 0.5);
+}
+
+.categoryRow {
+    background: rgba(20, 40, 60, 0.9);
+    transition: all 0.3s ease;
+}
+
+.categoryRow:hover {
+    background: rgba(30, 50, 70, 0.9);
+    transform: translateY(-2px);
+}
+
+.categoryCell {
+    padding: 20px;
+    border-right: 3px solid #FFD700;
+}
+
+.categoryName {
+    color: #FFD700;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.questionCell, .emptyCell {
+    padding: 10px;
+    text-align: center;
+}
+
+.questionButton {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #4ECDC4;
+    background: linear-gradient(45deg, #2a5a7a, #1a3a5a);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.questionButton:hover:not(:disabled) {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(45deg, #3a6a8a, #2a4a6a);
+    box-shadow: 0 0 25px rgba(78, 205, 196, 0.7);
+    border-color: #FFD700;
+}
+
+.questionButton.answered {
+    background: #333;
+    border-color: #666;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+.questionScore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.tableFooter {
+    margin-top: 40px;
+    position: relative;
+    height: 40px;
+}
+
+.garland {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        background: #FF0000;
+        box-shadow: 0 0 10px #FF0000;
+    }
+    33% {
+        background: #00FF00;
+        box-shadow: 0 0 10px #00FF00;
+    }
+    66% {
+        background: #0000FF;
+        box-shadow: 0 0 10px #0000FF;
+    }
+    100% {
+        background: #FFD700;
+        box-shadow: 0 0 10px #FFD700;
+    }
+}
